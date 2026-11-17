@@ -15,16 +15,18 @@ let score = 0;
 // 新しい画像を追加するときは、ここに1行追加する
 let images = [];
 
-function preload() {
-  images = [
-    loadImage("/bazu3.jpg"),
-    loadImage("/bazu2.jpg")
-  ];
-}
-
-function setup() {
+async function setup() {
+  
+  // images = [
+  //   loadImage("bazu3.jpg"),
+  //   loadImage("bazu2.jpg")
+  // ];
+  let img;
+  img = await
+  loadImage('\finalwork\bazu1.jpg');
   createCanvas(windowWidth, windowHeight);
-  image(images[1],0,0);
+  image(img,0,0);
+  // image(images[1],0,0);
   x = width / 2;
   y = height * 0.8 - height * 0.1 / 2;
   vy = 0;

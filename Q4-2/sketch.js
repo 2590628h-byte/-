@@ -5,7 +5,7 @@ function setup(){
 
   // 配列をランダムに初期化する
   let scores = [];
-  for(let i = 0; i < 10; i++){
+  for(let i = 0; i < 5; i++){
     scores[i] = random(20, 100); // 60以上100未満のランダムな数を代入
   }
 
@@ -18,6 +18,17 @@ function setup(){
   const dx = width / scores.length;
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
-    // BLANK[1]
+  
+      const x = dx * i + dx / 2;
+    const y = height - scores[i] / 100 * height;
+
+    circle(x, y, 5);
+
+    if(i > 0){
+      line(px, py, x, y);
+    }
+
+    px = x;
+    py = y;
   }
 }

@@ -1,13 +1,59 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <style> body {padding: 0; margin: 0; overflow: hidden; } canvas { display: block }</style>
-    <script src="../lib/p5.min.js"></script>
-    <script src="sketch.js"></script>
-    <title>Q2-2</title>
-  </head>
-  <body>
-  </body>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+  .board {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    width: 320px;
+  }
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+</style>
+</head>
+<body>
+<div class="board" id="board"></div>
+
+<script>
+const board = document.getElementById("board");
+
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+
+     if ((i + j) % 2 === 0) {
+      cell.style.backgroundColor = "gray";
+    } else {
+      cell.style.backgroundColor = "white";
+    }
+
+
+ if ((i + j) % 2 === 0 && (i < 3 || i >= 7)) {
+      const circle = document.createElement("div");
+      circle.style.width = "40px";
+      circle.style.height = "40px";
+      circle.style.borderRadius = "50%";
+
+      if (i < 3) {
+        circle.style.backgroundColor = "red";
+      } else {
+        circle.style.backgroundColor = "black";
+      }
+
+      cell.appendChild(circle);
+    }
+
+    board.appendChild(cell);
+  }
+}
+</script>
+</body>
 </html>
+
+
+

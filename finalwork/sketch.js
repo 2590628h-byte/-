@@ -24,6 +24,8 @@ function preload(){
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
+  
+  image('bazu1.jpg')
   x = width / 2;
   y = height * 0.8 - height * 0.1 / 2;
   vy = 0;
@@ -43,7 +45,6 @@ function draw(){
   fill(64, 192, 64);
   noStroke();
   rect(0, groundY, width, height - groundY);
-
 
 
   // 障害物がないとき画像をランダムに登場させる

@@ -15,27 +15,26 @@ let score = 0;
 // 新しい画像を追加するときは、ここに1行追加する
 let images = [];
 
-function preload(){
+function preload() {
   images = [
-    loadImage("/bazu1.jpg"),
+    loadImage("/bazu3.jpg"),
     loadImage("/bazu2.jpg")
   ];
 }
 
-function setup(){
+function setup() {
   createCanvas(windowWidth, windowHeight);
-  
-  image('bazu1.jpg')
+  image(images[1],0,0);
   x = width / 2;
   y = height * 0.8 - height * 0.1 / 2;
   vy = 0;
 }
 
-function windowResized(){
+function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function draw(){
+function draw() {
   background(160, 192, 255);
 
   size = height * 0.1 * playerSize;
